@@ -5,13 +5,9 @@ post: entryPoint withValues: aDictionary
 	
 	client := self httpClient.
 
-	(self shouldUseFormData: entryPoint)
-		ifTrue: [
-			res := self formPost: urlStr values: aDictionary by: client.
-		]
-		ifFalse: [
-			res := self jsonPost: urlStr values: aDictionary by: client.
-		].
+	res := (self shouldUseFormData: entryPoint)
+				ifTrue: [ self formPost: urlStr values: aDictionary by: client ]
+				ifFalse: [ self jsonPost: urlStr values: aDictionary by: client ].
 
 "	res isError ifTrue: [ self handleApiException: res ]."
 	^ PSlackResponse from: res.
