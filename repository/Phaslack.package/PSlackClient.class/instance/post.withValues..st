@@ -5,17 +5,12 @@ post: entryPoint withValues: aDictionary
 	
 	client := self httpClient.
 
-	(self isFilesUpload: entryPoint)
+	(self shouldUseFormData: entryPoint)
 		ifTrue: [
-			aDictionary keysAndValuesDo: [ :key :value |
-				client formAt: key put: value.
-			].
-			res := self formPost: urlStr by: client.
+			res := self formPost: urlStr values: aDictionary by: client.
 		]
 		ifFalse: [
-			| jsonString |
-			jsonString := NeoJSONWriter toString: aDictionary.
-			res := self jsonPost: urlStr content: jsonString by: client.
+			res := self jsonPost: urlStr values: aDictionary by: client.
 		].
 
 "	res isError ifTrue: [ self handleApiException: res ]."
