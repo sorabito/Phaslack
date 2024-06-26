@@ -1,1 +1,1 @@
-SystemOrganization addCategory: #BaselineOfPhaslack!
+self packageOrganizer ensurePackage: #BaselineOfPhaslack withTags: #()!
