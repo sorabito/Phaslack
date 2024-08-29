@@ -1,4 +1,4 @@
-api-files
+api-files-deprecated
 filesUpload: filePath fileNamed: fileName channels: channels
 	| options |
 	options := Dictionary new

@@ -1,4 +1,4 @@
-api-files
+api-files-deprecated
 filesUploadStream: stream fileNamed: fileName channels: channels
 	| options |
 	options := Dictionary new

@@ -1,4 +1,4 @@
-api-files
+api-files-deprecated
 filesUploadStream: stream fileNamed: fileName
 	^ self 
 		filesUploadStream: stream 

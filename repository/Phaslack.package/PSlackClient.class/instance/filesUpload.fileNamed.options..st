@@ -1,4 +1,4 @@
-api-files
+api-files-deprecated
 filesUpload: filePath fileNamed: fileName options: options
 	| values res |
 	values := options copy
